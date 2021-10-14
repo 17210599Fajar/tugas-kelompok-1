@@ -1,36 +1,43 @@
-nim = input("Masukan nim: ")
-nama = input("Masukan nama: ")
-kelas = input("Masukan kelas: ")
-Matakuliah = input("Masukan matakuliah: ")
-nilaiabsen = int(input("Masukan nilai absen : "))
-nilaitugas1 = int(input("Masukan nilai tugas 1 : "))
-nilaitugas2 = int(input("Masukan nilai tugas 2 : "))
-nilaiuts = int(input("Masukan nilai uts : "))
-nilaiuas = int(input("Masukan nilai uas : "))
-nilai=("nilaiabsen : ")+("nilaitugas1 : ")+("nilaitugas2 : ")+("nilaiuts : ")+("nilaiuas : ")
-
-print("nim :" +(nim))
-print("nama :" +(nama))
-print("kelas :" +(kelas))
-print("Matakuliah :" +(Matakuliah))
-print("nilai absen :" +str(float(1/20))+'%')
-print("nilai tugas 1 :" +str(float(1/10))+'%')
-print("nilai tugas 2 :" +str(float(1/10))+'%')
-print("nilai uts : " +str(float(1/30))+'%')
-print("nilai uas : " +str(float(1/30))+'%')
+nim = input("Masukan NIM = ")
+nama = input("Masukan Nama = ")
+kelas = input("Masukan Kelas = ")
+matkul = input("Masukan Matakuliah = ")
+nilai_absen = int(input("Nilai Absen = "))
+nilai_tugas1 = int(input("Nilai Tugas 1 = "))
+nilai_tugas2 = int(input("Nilai Tugas 2 = "))
+nilai_uts = int(input("Nilai UTS = "))
+nilai_uas = int(input("Nilai UAS = "))
 
 
-nilai = int(input("Masukan nilai anda :"))
+# prosses
 
-if(nilai>=80):
-    print("Grade A")
-    print("Selamat Anda LULUS")
-elif(nilai>=70):
-    print("Grade B")
-    print("Selamat Anda LULUS")
-elif(nilai>=60):
-    print("Grade C")
-    print("Anda Belum LULUS")
+any = nilai_absen * 0.20 + nilai_tugas1 * 0.10 + \
+    nilai_tugas2 * 0.10 + nilai_uts * 0.30 + nilai_uas * 0.30
+
+
+# output
+
+print("=======================================")
+print("NIM      :"+str(nim))
+print("NAMA     :"+str(nama))
+print("KELAS    :"+str(kelas))
+print("MATKUL   :"+str(matkul))
+
+if any >= 85:
+    print("GRADE A")
+    print("SELAMAT NILAI ANDA SANGAT BAGUS DAN ANDA LULUS")
+
+elif any >= 75:
+    print("GRADE B")
+    print("SELAMAT NILAI ANDA CUKUP BAGUS DAN ANDA LULUS")
+
+elif any >= 65:
+    print("GRADE C")
+    print("SELAMAT NILAI ANDA CUKUP DAN ANDA LULUS")
+
 else:
-    print("Grade D")
-    print("Nilai Anda Jelek") 
+    print("GRADE D")
+    print("NILAI ANDA BELUM CUKUP DAN ANDA BELUM LULUS")
+
+print("TOTAL NILAI KESELURUHAN = "+str(any))
+print("=======================================")
